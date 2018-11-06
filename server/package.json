@@ -1,9 +1,15 @@
 {
-	"name": "auth-i",
+	"name": "Labs8-RateMyDIY",
 	"version": "1.0.0",
 	"main": "index.js",
-	"repository": "https://github.com/maxkajiwara/auth-i.git",
-	"author": "Max <maxkajiwara@gmail.com>",
+	"repository": "https://github.com/Lambda-School-Labs/Labs8-RateMyDIY.git",
+	"author": [
+		"Michael Agard <https://github.com/michaelagard>",
+		"David Benavidez <https://github.com/DavidBenavidez123>",
+		"Max Kajiwara <https://github.com/maxkajiwara>",
+		"Alejandro Krasovsky <https://github.com/alejandrok93>",
+		"Tristen Neu <https://github.com/tristenneu>"
+	],
 	"license": "MIT",
 	"scripts": {
 		"start": "node index.js",
