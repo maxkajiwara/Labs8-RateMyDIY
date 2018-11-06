@@ -1,0 +1,20 @@
+.landing-page-container {
+  width: 100%;
+}
+
+.projects-container {
+  width: 100%;
+  margin: 0 auto;
+
+  border: 1px solid blue;
+}
+
+.projects-container h1 {
+  width: 100%;
+  margin: 10px 25px;
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+}
