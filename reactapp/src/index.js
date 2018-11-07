@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 // Reducers
 import rootReducer from './reducers';
 // Components
-import App from './components';
+import { App } from './components';
 // Styles
 import './index.css';
 
