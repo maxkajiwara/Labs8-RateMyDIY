@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 //Styles
-const UserSideBarContainer = styled.div`
+const UserSettingSideBarContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 150px;
@@ -13,7 +13,7 @@ const UserSideBarContainer = styled.div`
 	border-radius: 4px;
 `;
 
-const UserSideBarItem = styled.div`
+const UserSettingSideBarItem = styled.div`
 font-size: 18px;
 	display: flex;
   justify-content: center;
@@ -24,62 +24,63 @@ font-size: 18px;
     transition-duration: .1s;
   }
 `;
-class UserSideBar extends Component {
+
+class UserSettingSideBar extends Component {
   render() {
     return (
-      <UserSideBarContainer>
-        <UserSideBarItem
+      <UserSettingSideBarContainer>
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/summaries')
           }}>
           Summaries
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/positions')
           }}>
           Positions
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/education')
           }}>
           Education
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/skills')
           }}>
           Skills
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/resumes')
           }}>
           Resumes
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/billing')
           }}>
           Billing
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-        <UserSideBarItem
+        <UserSettingSideBarItem
           onMouseDown={() => {
             this.props.history.push('/settings')
           }}>
           Settings
-				</UserSideBarItem>
+				</UserSettingSideBarItem>
 
-      </UserSideBarContainer>
+      </UserSettingSideBarContainer>
     );
   }
 }
 
-export default UserSideBar;
+export default UserSettingSideBar;
