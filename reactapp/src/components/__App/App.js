@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Components
-import ExampleComponent from '../../components';
+import ExampleComponent from '../_ExampleComponent/ExampleComponent';
 
 //Styles
 const AppContainer = styled.div`
