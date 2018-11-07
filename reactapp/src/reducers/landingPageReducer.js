@@ -1,24 +1,8 @@
-import { GET_PROJECTS } from "../actions";
+import { GET_PROJECTS, GET_MAKERS, GET_REVIEWERS } from "../actions";
 
 const initialState = {
-  featuredProjects: [
-    {
-      id: 1,
-      name: "Micro brew IPA",
-      star_count: 4.2,
-      author: "alejandrok",
-      photo_url: "http:// someURL.com"
-    }
-  ],
-  popularMakers: [
-    {
-      id: 1,
-      name: "Alejandrok",
-      star_count: 4.2,
-      author: "alejandrok",
-      photo_url: "http:// someURL.com"
-    }
-  ],
+  featuredProjects: [],
+  popularMakers: [],
   popularReviewers: [
     {
       id: 2,
@@ -34,8 +18,11 @@ const landingPageReducer = (state = initialState, action) => {
   switch (action.type) {
     // example action
     case GET_PROJECTS:
-      return { ...state, featuredProjects: action.payload.featuredProjects };
-
+      return { ...state, featuredProjects: action.payload };
+    case GET_MAKERS:
+      return { ...state, popularMakers: action.payload };
+    case GET_REVIEWERS:
+      return { ...state, popularReviewers: action.payload };
     default:
       return state;
   }

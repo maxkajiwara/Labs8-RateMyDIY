@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { NavLink, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { getProjects } from "../../actions";
+import { getProjects, getMakers, getReviewers } from "../../actions";
 import "./LandingPage.css";
 
 //Import component
@@ -19,6 +19,8 @@ class LandingPage extends Component {
   componentDidMount() {
     console.log("component did mount!");
     this.props.getProjects();
+    this.props.getMakers();
+    this.props.getReviewers();
   }
 
   render() {
@@ -33,8 +35,6 @@ class LandingPage extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("heres state");
-  console.log(state);
   return {
     featuredProjects: state.landingPageReducer.featuredProjects,
     popularMakers: state.landingPageReducer.popularMakers,
@@ -44,5 +44,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getProjects }
+  { getProjects, getMakers, getReviewers }
 )(LandingPage);

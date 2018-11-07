@@ -13,7 +13,6 @@ class FeaturedProjects extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="projects-container">
         <h1>Featured Projects</h1>
