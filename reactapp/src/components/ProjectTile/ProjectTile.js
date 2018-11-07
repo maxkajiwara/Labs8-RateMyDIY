@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./ProjectTile.css";
 
 const ProjectTile = props => {
-  console.log(props.project);
   return (
     <div className="project">
       <img className="project-image" src="${https://someAWS.S3.URL}" />

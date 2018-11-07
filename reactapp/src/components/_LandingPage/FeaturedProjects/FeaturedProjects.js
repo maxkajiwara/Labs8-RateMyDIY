@@ -16,7 +16,6 @@ class FeaturedProjects extends Component {
     this.setState({ ...this.state, projects: this.props.featuredProjects });
   }
   render() {
-    console.log(this.state.projects);
     return (
       <div className="projects-container">
         <h1>Featured Projects</h1>

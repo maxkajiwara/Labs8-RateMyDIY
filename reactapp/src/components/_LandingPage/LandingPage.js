@@ -4,6 +4,7 @@ import { NavLink, Link, Route } from "react-router-dom";
 
 import "./LandingPage.css";
 
+const data = require("../dummyData.js");
 //Import component
 const {
   FeaturedProjects,
@@ -14,23 +15,11 @@ const {
 class LandingPage extends Component {
   constructor() {
     super();
+
     this.state = {
-      featuredProjects: [
-        {
-          id: 1,
-          name: "Micro brew IPA",
-          star_count: 4.2,
-          author: "alejandrok",
-          photo_url: "http:// someURL.com"
-        },
-        {
-          id: 1,
-          name: "Steak Recipe",
-          star_count: 4.2,
-          author: "john",
-          photo_url: "someURL.com"
-        }
-      ]
+      featuredProjects: data.featuredProjects,
+      popularMakers: data.popularMakers,
+      popularReviewers: data.popularReviewers
     };
   }
 
@@ -38,6 +27,8 @@ class LandingPage extends Component {
     return (
       <div className="landing-page-container">
         <FeaturedProjects featuredProjects={this.state.featuredProjects} />
+        <PopularMakers popularMakers={this.state.popularMakers} />
+        <PopularReviewers reviewers={this.state.popularReviewers} />
       </div>
     );
   }
