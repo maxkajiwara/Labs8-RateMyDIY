@@ -1,6 +1,8 @@
 // Dependencies
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import { fetchSearchResults } from "../../actions";
+import { connect } from "react-redux";
 import "./SearchPage.css";
 
 //Import components
@@ -9,32 +11,10 @@ import { SearchBar, ProjectTile } from "../../components";
 class SearchPage extends Component {
   constructor() {
     super();
-    this.state = {
-      projects: [
-        {
-          id: 1,
-          name: "Micro brew IPA",
-          star_count: 4.2,
-          author: "alejandrok",
-          photo_url: "http:// someURL.com"
-        },
-        {
-          id: 2,
-          name: "Steak Recipe",
-          star_count: 4.2,
-          author: "john",
-          photo_url: "someURL.com"
-        },
-        {
-          id: 2,
-          name: "Another cool project",
-          star_count: 4.2,
-          author: "alejandro",
-          photo_url: "someURL.com"
-        }
-      ],
-      input: ""
-    };
+  }
+
+  componentDidMount() {
+    this.props.fetchSearchResults();
   }
   handleChange = e => {
     console.log(e.target.value);
@@ -49,7 +29,7 @@ class SearchPage extends Component {
         <div className="search-options" />
         <div className="search-results">
           <h1>Search results</h1>
-          {this.state.projects.map(project => (
+          {this.props.projects.map(project => (
             <ProjectTile project={project} />
           ))}
         </div>
@@ -58,4 +38,14 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    projects: state.searchReducer.projects
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { fetchSearchResults }
+)(SearchPage);
