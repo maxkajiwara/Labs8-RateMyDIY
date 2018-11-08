@@ -20,6 +20,8 @@ export { default as UserSettingsSummaries } from "./_UserSettingsPage/Summaries/
 export { default as UserSettingsSideBar } from "./_UserSettingsPage/SideBar/SideBar";
 export { default as ProjectList } from "./_AccountPage/_ProjectList/ProjectList"
 export { default as ReviewList } from "./_AccountPage/_ReviewList/ReviewList"
+export { default as Billing } from "./_AccountPage/_Billing/Billing"
+export { default as CreateEditPage } from "./_CreateEditPage/CreateEditPage"
 export { default as AccountSideBar } from "./_AccountPage/AccountSideBar"
 export { default as UserSettingBilling } from "./_UserSettingsPage/Billing/Billing"
 export { default as UserSettingEducation } from "./_UserSettingsPage/Education/Education"
