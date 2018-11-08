@@ -6,17 +6,19 @@ import styled from "styled-components";
 // Components
 import {
   ExampleComponent,
-   ReviewList,
+  ReviewList,
   LandingPage,
   ProjectList,
   UserSettingsSideBar,
-   UserSettingsSummaries,
+  UserSettingsSummaries,
   UserSettingBilling,
   UserSettingEducation,
   UserSettingPositions,
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
+  SearchBar,
+  SearchPage
 } from "../../components";
 
 //Styles
@@ -39,12 +41,14 @@ class App extends Component {
         <Route path="/settings" component={UserSettingsSideBar} />
         <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />
+        <Route exact path="/ProjectList" component={ ProjectList} />
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
         <Route path="/settings/resumes" component={UserSettingResumes} />
         <Route path="/settings/billing" component={UserSettingBilling} />
         <Route path="/settings/settings" component={UserSettingSettings} />
+        <Route path="/search" component={SearchPage} />
       </AppContainer>
     );
   }
