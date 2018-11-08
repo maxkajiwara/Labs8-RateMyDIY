@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./AccountSideBar.css";
 
 
@@ -8,11 +8,56 @@ class AccountSideBar extends Component {
   render() {
     return (
       <div className="accountSideBar">
-          <Link to="/Search"><h1>Search</h1></Link>
-          <Link to="/ProjectList"><h1>My Projects</h1></Link>
-          <Link to="/ReviewList"><h1>My Reviews</h1></Link>
-          <Link to="/Billing"><h1>Billing</h1></Link>
-          <Link to="/Settings"><h1>Settings</h1></Link>
+        <NavLink
+          to={"/Search"}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            background: "lightgrey"
+          }}
+        >
+          <h1>Search</h1>
+        </NavLink>
+        <NavLink
+          to={"/ProjectList"}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            background: "lightgrey"
+          }}
+        >
+          <h1>My Projects</h1>
+        </NavLink>
+        <NavLink
+          to={"/ReviewList"}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            background: "lightgrey"
+          }}
+        >
+          <h1>My Reviews</h1>
+        </NavLink>
+        <NavLink
+          to={"/Billing"}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            background: "lightgrey"
+          }}
+        >
+          <h1>Billing</h1>
+        </NavLink>
+        <NavLink
+          to={"/Settings"}
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            background: "lightgrey"
+          }}
+        >
+          <h1>Settings</h1>
+        </NavLink>
       </div>
     );
   }
