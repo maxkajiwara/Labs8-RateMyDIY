@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
@@ -35,6 +35,21 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
+        <h1>Navigation</h1>
+        <ul>
+          <li>
+            <Link to="/landing">Landing Page</Link>
+          </li>
+          <li>
+            <Link to="/ReviewList">Review List</Link>
+          </li>
+          <li>
+            <Link to="/settings">Settings</Link>
+          </li>
+          <li>
+            <Link to="/search">Search Page</Link>
+          </li>
+        </ul>
         {/* <Navbar /> */}
         <Route exact path="/" component={ExampleComponent} />
         <Route exact path="/landing" component={LandingPage} />
