@@ -1,0 +1,31 @@
+.search-bar {
+  width: 60%;
+  height: 35px;
+  margin: 25px auto;
+  display: flex;
+
+  border: 1px solid coral;
+}
+.search-bar input {
+  width: 100%;
+  color: black;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.search-bar input::placeholder {
+  color: black;
+}
+.search-bar button {
+  width: 80px;
+  height: 25px;
+  margin: 0px 15px;
+  background: 0;
+  border: none;
+  border: 2px solid black;
+  box-shadow: 5px 5px 0px;
+}
+.search-bar button .fa-search {
+  color: white;
+}
