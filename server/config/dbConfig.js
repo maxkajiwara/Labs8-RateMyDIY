@@ -1,7 +1,8 @@
 const knex = require("knex");
 const knexConfig = require("../knexfile");
 
-module.exports = knex(knexConfig.auth);
+// module.exports = knex(knexConfig.sqlite);
+module.exports = knex(knexConfig.development);
 
 //added HEROKU POSGRESQL DB for testing
 //module.exports = knex(knexConfig.heroku);
