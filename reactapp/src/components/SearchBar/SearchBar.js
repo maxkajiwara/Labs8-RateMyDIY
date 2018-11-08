@@ -17,7 +17,7 @@ const SearchBar = props => {
         onChange={e => props.handleChange(e)}
         placeholder="Find a DIY project"
       />
-      <button class="search-button">Search</button>
+      <button className="search-button">Search</button>
     </div>
   );
 };
