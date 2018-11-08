@@ -10,6 +10,7 @@ import {
   LandingPage,
   ProjectList,
   UserSettingsSideBar,
+   UserSettingsSummaries,
   UserSettingBilling,
   UserSettingEducation,
   UserSettingPositions,
@@ -17,7 +18,6 @@ import {
   UserSettingResumes,
   UserSettingSettings,
 } from "../../components";
-
 
 //Styles
 const AppContainer = styled.div`
@@ -36,8 +36,8 @@ class App extends Component {
         {/* <Navbar /> */}
         <Route exact path="/" component={ExampleComponent} />
         <Route exact path="/landing" component={LandingPage} />
-        <Route exact path="/ProjectList" component={ProjectList} />
         <Route path="/settings" component={UserSettingsSideBar} />
+        <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
