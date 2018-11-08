@@ -4,9 +4,9 @@ import { Route } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
-
 import {
   ExampleComponent,
+   ReviewList,
   LandingPage,
   ProjectList,
   UserSettingsSideBar,
@@ -38,6 +38,7 @@ class App extends Component {
         <Route exact path="/landing" component={LandingPage} />
         <Route exact path="/ProjectList" component={ProjectList} />
         <Route path="/settings" component={UserSettingsSideBar} />
+        <Route exact path="/ReviewList" component={ReviewList} />
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
