@@ -9,6 +9,8 @@ import {
   ReviewList,
   LandingPage,
   ProjectList,
+  CreateEditPage, 
+  Billing,
   UserSettingsSideBar,
   UserSettingsSummaries,
   UserSettingBilling,
@@ -17,8 +19,9 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
-  SearchBar,
+ SearchBar,
   SearchPage
+
 } from "../../components";
 
 //Styles
@@ -51,12 +54,14 @@ class App extends Component {
           </li>
         </ul>
         {/* <Navbar /> */}
-        <Route exact path="/" component={ExampleComponent} />
-        <Route exact path="/landing" component={LandingPage} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
         <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />
-        <Route exact path="/ProjectList" component={ ProjectList} />
+        <Route exact path="/ProjectList" component={ProjectList} />
+        <Route exact path="/Billing" component={Billing} />
+        <Route exact path="/CreateEditPage" component={CreateEditPage} />
+
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
