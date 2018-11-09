@@ -52,16 +52,40 @@ module.exports = {
     }
   },
   sqlite: {
-		client: 'sqlite3',
-    	connection: {
-      		filename: './sqlite/db.sqlite3'
-    	},
-    	useNullAsDefault: true,
-    	migrations: {
-      		directory: './sqlite/migrations'
-    	},
-    	seeds: {
-      		directory: './sqlite/seeds'
-    	}
-	},
+    client: "sqlite3",
+    connection: {
+      filename: "./sqlite/db.sqlite3"
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: "./sqlite/migrations"
+    },
+    seeds: {
+      directory: "./sqlite/seeds"
+    }
+  },
+
+  devazure: {
+    client: "mssql",
+    connection: {
+      host: "ratemydiy.database.windows.net",
+      user: "diyadmin",
+      password: "Lambda13",
+      database: "diydb",
+      options: {
+        port: 1433,
+        encrypt: true
+      }
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: "./migrations",
+      tableName: "migrations"
+    },
+    seeds: { directory: "./seeds" }
+  }
 };
