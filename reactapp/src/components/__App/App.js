@@ -1,10 +1,11 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
 import {
+  ExampleComponent,
   ReviewList,
   LandingPage,
   ProjectList,
@@ -18,7 +19,9 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
-  
+ SearchBar,
+  SearchPage
+
 } from "../../components";
 
 //Styles
@@ -35,6 +38,21 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
+        <h1>Navigation</h1>
+        <ul>
+          <li>
+            <Link to="/landing">Landing Page</Link>
+          </li>
+          <li>
+            <Link to="/ReviewList">Review List</Link>
+          </li>
+          <li>
+            <Link to="/settings">Settings</Link>
+          </li>
+          <li>
+            <Link to="/search">Search Page</Link>
+          </li>
+        </ul>
         {/* <Navbar /> */}
         <Route exact path="/" component={LandingPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
@@ -43,12 +61,14 @@ class App extends Component {
         <Route exact path="/ProjectList" component={ProjectList} />
         <Route exact path="/Billing" component={Billing} />
         <Route exact path="/CreateEditPage" component={CreateEditPage} />
+
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
         <Route path="/settings/resumes" component={UserSettingResumes} />
         <Route path="/settings/billing" component={UserSettingBilling} />
         <Route path="/settings/settings" component={UserSettingSettings} />
+        <Route path="/search" component={SearchPage} />
       </AppContainer>
     );
   }
