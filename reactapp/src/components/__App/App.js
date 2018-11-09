@@ -38,7 +38,7 @@ class App extends Component {
         <h1>Navigation</h1>
         <ul>
           <li>
-            <Link to="/landing">Landing Page</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/ReviewList">Review List</Link>
@@ -51,12 +51,11 @@ class App extends Component {
           </li>
         </ul>
         {/* <Navbar /> */}
-        <Route exact path="/" component={ExampleComponent} />
-        <Route exact path="/landing" component={LandingPage} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
         <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />
-        <Route exact path="/ProjectList" component={ ProjectList} />
+        <Route exact path="/ProjectList" component={ProjectList} />
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
