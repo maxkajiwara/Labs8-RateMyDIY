@@ -23,6 +23,12 @@ const projectsRoutes = require('./routes/projectsRoutes');
 server.use('/', userRoutes);
 server.use('/', projectsRoutes);
 
+// server.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
+
 // Error handlers
 // Catch 404 and forward to error handler
 server.use(function (req, res, next) {

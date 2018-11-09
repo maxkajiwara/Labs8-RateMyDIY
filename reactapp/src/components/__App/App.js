@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
+import Auth from '../../components/Auth/Auth';
 
 // Components
 import {
@@ -20,7 +21,7 @@ import {
   UserSettingResumes,
   UserSettingSettings,
  SearchBar,
-  SearchPage
+  SearchPage,
 
 } from "../../components";
 
@@ -41,7 +42,7 @@ class App extends Component {
         <h1>Navigation</h1>
         <ul>
           <li>
-            <Link to="/landing">Landing Page</Link>
+            <Link to="/">Landing Page</Link>
           </li>
           <li>
             <Link to="/ReviewList">Review List</Link>
@@ -51,6 +52,9 @@ class App extends Component {
           </li>
           <li>
             <Link to="/search">Search Page</Link>
+          </li>
+          <li>
+            <Link to="/signin">Sign Up or Sign In</Link>
           </li>
         </ul>
         {/* <Navbar /> */}
@@ -69,6 +73,7 @@ class App extends Component {
         <Route path="/settings/billing" component={UserSettingBilling} />
         <Route path="/settings/settings" component={UserSettingSettings} />
         <Route path="/search" component={SearchPage} />
+        <Route path="/signin" component={Auth} />
       </AppContainer>
     );
   }
