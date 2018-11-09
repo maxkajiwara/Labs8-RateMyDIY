@@ -42,7 +42,7 @@ class App extends Component {
         <h1>Navigation</h1>
         <ul>
           <li>
-            <Link to="/">Landing Page</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/ReviewList">Review List</Link>
@@ -65,7 +65,6 @@ class App extends Component {
         <Route exact path="/ProjectList" component={ProjectList} />
         <Route exact path="/Billing" component={Billing} />
         <Route exact path="/CreateEditPage" component={CreateEditPage} />
-
         <Route path="/settings/positions" component={UserSettingEducation} />
         <Route path="/settings/education" component={UserSettingPositions} />
         <Route path="/settings/skills" component={UserSettingSkills} />
