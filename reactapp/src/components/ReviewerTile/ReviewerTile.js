@@ -8,6 +8,7 @@ const ReviewerTile = props => {
     <div className="project">
       <img className="project-image" src="${https://someAWS.S3.URL}" />
       <p className="project-name">{props.reviewer.name}</p>
+      <p className="project-name">{props.reviewer.name}</p>
     </div>
   );
 };

@@ -11,6 +11,8 @@ import logger from "redux-logger";
 import rootReducer from "./reducers";
 // Components
 import { App } from "./components";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 // Styles
 import "./index.css";
 
