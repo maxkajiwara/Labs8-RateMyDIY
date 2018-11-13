@@ -30,8 +30,8 @@ router.get('/signout', (req, res) => {
   });
 
 router.get('/test', ensureLoggedIn, function (req, res, next) {
-    // console.log(req.user);
-    console.log(req.user.app_metadata);
+    console.log(req.user);
+    // console.log(req.user.app_metadata);
     let sub = req.user._json.sub.split('|');
     let auth_id = sub[1];
     let username = req.user._json.nickname;
