@@ -30,15 +30,14 @@ router.get('/signout', (req, res) => {
   });
 
 router.get('/test', ensureLoggedIn, function (req, res, next) {
-    console.log(req.user);
-    // console.log(req.user.app_metadata);
-    let sub = req.user._json.sub.split('|');
-    let auth_id = sub[1];
-    let username = req.user._json.nickname;
-    let user = {
-        auth_id,
-        username
-    }
+    // console.log(req.user);
+    // let sub = req.user._json.sub.split('|');
+    // let auth_id = sub[1];
+    // let username = req.user._json.nickname;
+    // let user = {
+    //     auth_id,
+    //     username
+    // }
     // db
     //     .addUser(user)
     //     .then(ids => {
@@ -48,7 +47,7 @@ router.get('/test', ensureLoggedIn, function (req, res, next) {
     //     .catch(err => {
     //         res.status(500).json(err);
     //     });
-    res.status(200).json(user);
+    res.status(200).json(req.user);
 });
 
 module.exports = router;
