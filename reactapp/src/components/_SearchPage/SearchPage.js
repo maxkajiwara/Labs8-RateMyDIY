@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 import { fetchSearchResults } from "../../actions";
 import { connect } from "react-redux";
 import "./SearchPage.css";
@@ -9,9 +9,9 @@ import "./SearchPage.css";
 import { SearchBar, ProjectTile } from "../../components";
 
 class SearchPage extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // } // useless constructor
 
   componentDidMount() {
     this.props.fetchSearchResults();
