@@ -15,28 +15,28 @@ class ReviewList extends Component {
 
   render() {
 
-  
+
 
     if (!this.props.myReviews || this.props.myReviews.length === 0) {
       return (
-          <div className="reviewPage">   
-        <div className="sideBar">
-        <AccountSideBar />
-      </div>
-        <div className="addNewReview">
-          <h2>Add a new review</h2>
-          <Link to="">
-            <img src="http://chittagongit.com//images/plus-button-icon/plus-button-icon-13.jpg" />
-          </Link>
+        <div className="reviewPage">
+          <div className="sideBar">
+            <AccountSideBar />
+          </div>
+          <div className="addNewReview">
+            <h2>Add a new review</h2>
+            <Link to="">
+              <img alt="PLACEHOLDER! alt text" src="http://chittagongit.com//images/plus-button-icon/plus-button-icon-13.jpg" />
+            </Link>
+          </div>
         </div>
-         </div>
       );
-      
+
     } else {
       return (
         <div className="reviewPage">
           <div className="sideBar">
-          <AccountSideBar />
+            <AccountSideBar />
           </div>
 
           <div className="myReviewDisplay">
@@ -51,7 +51,7 @@ class ReviewList extends Component {
             })}
           </div>
         </div>
-        
+
       );
     }
   }
