@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { Component } from "react";
-import { NavLink, Link, Route } from "react-router-dom";
+// import { NavLink, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProjects, getMakers, getReviewers } from "../../actions";
 import "./LandingPage.css";
