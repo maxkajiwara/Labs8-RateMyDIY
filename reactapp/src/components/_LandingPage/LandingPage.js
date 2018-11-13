@@ -37,7 +37,7 @@ class LandingPage extends Component {
   };
 
   render() {
-    console.log(SearchBar);
+    // console.log(SearchBar);
     return (
       <div className="container">
         <SearchBar handleChange={this.handleChange} />

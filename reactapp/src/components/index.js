@@ -1,4 +1,5 @@
 export { default as App } from "./__App/App";
+export { default as SearchBar } from "./SearchBar/SearchBar";
 export {
   default as ExampleComponent
 } from "./_ExampleComponent/ExampleComponent";
@@ -8,7 +9,7 @@ export {
 export {
   default as PopularMakers
 } from "./_LandingPage/PopularMakers/PopularMakers";
-export { default as SearchBar } from "./SearchBar/SearchBar";
+
 export {
   default as PopularReviewers
 } from "./_LandingPage/PopularReviewers/PopularReviewers";
