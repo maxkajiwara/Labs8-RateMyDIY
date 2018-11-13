@@ -6,11 +6,10 @@ import Auth from '../../components/Auth/Auth';
 
 // Components
 import {
-  ExampleComponent,
   ReviewList,
   LandingPage,
   ProjectList,
-  CreateEditPage, 
+  CreateEditPage,
   Billing,
   UserSettingsSideBar,
   UserSettingsSummaries,
@@ -20,7 +19,7 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
- SearchBar,
+  //  SearchBar, // not used
   SearchPage,
 
 } from "../../components";
