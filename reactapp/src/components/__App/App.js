@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <AppContainer>
         <h1>Navigation</h1>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -54,9 +54,9 @@ class App extends Component {
           <li>
             <Link to="/signin">Sign Up or Sign In</Link>
           </li>
-        </ul>
+        </ul> */}
         {/* <Navbar /> */}
-        <Route exact path="/" component={SearchPage} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
         <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />
