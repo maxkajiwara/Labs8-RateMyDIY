@@ -19,7 +19,6 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
-  DropDown,
   //  SearchBar, // not used
   SearchPage,
 } from "../../components";
