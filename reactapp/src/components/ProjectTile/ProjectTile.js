@@ -7,6 +7,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 class ProjectTile extends React.Component {
   constructor(props) {
     super(props);
+    {
+      /* React strap Modal */
+    }
     this.state = {
       modal: false
     };
@@ -18,6 +21,9 @@ class ProjectTile extends React.Component {
     this.setState({
       modal: !this.state.modal
     });
+    {
+      /* React strap Modal */
+    }
   }
 
   render() {
@@ -33,17 +39,37 @@ class ProjectTile extends React.Component {
         </div>
         <p className="project-name">{this.props.project.name}</p>
         <Link to="/:author">{this.props.project.author}</Link>
-        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+
+        {/* React strap Modal */}
+        <Button color="danger" onClick={this.toggle}>
+          {" "}
+          <h3>Review</h3>
+          {this.props.buttonLabel}{" "}
+        </Button>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}
+          dialogClassName="my-modal"
+        >
+          <ModalHeader toggle={this.toggle}>
+            {this.props.project.name}
+          </ModalHeader>
           <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
           </ModalBody>
+          <ModalBody>{this.props.project.author}</ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="primary" onClick={this.toggle} >
+              Do Something
+            </Button>{" "}
           </ModalFooter>
         </Modal>
+        {/* React strap Modal */}
       </div>
     );
   }
