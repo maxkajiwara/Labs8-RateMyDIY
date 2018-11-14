@@ -36,10 +36,11 @@ router.get("/callback", function(req, res, next) {
   })(req, res, next);
 });
 
-router.get("/signout", (req, res) => {
-  req.logout();
-  res.redirect("/");
-});
+
+router.get('/signout', (req, res) => {
+	req.logout();
+	res.redirect('/');
+  });
 
 router.get("/test", ensureLoggedIn, authenticate, function(req, res, next) {
   //console.log(req.user);
