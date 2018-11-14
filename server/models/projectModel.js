@@ -42,7 +42,8 @@ function editProject(user_id, project_id, changes) {
 	return db('projects')
 		.where({ user_id, project_id })
 		.returning('project_id')
-		.update(changes);
+		.update(changes)
+		.then(ids => ids.length);
 }
 
 function removeProject(project_id) {
