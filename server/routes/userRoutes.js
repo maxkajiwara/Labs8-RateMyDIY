@@ -4,7 +4,6 @@ const passport = require("passport");
 const ensureLoggedIn = require("connect-ensure-login").ensureLoggedIn(
   "/signin"
 );
-const authenticate = require("../config/middleware");
 
 const db = require("../models/usersModel");
 
@@ -42,9 +41,9 @@ router.get("/signout", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/test", ensureLoggedIn, function(req, res, next) {
-  // console.log(req.user);
-  console.log(req.user.app_metadata);
+router.get("/test", ensureLoggedIn, authenticate, function(req, res, next) {
+  //console.log(req.user);
+  //console.log(req.user.app_metadata);
   let sub = req.user._json.sub.split("|");
   let auth_id = sub[1];
   let username = req.user._json.nickname;
@@ -61,7 +60,27 @@ router.get("/test", ensureLoggedIn, function(req, res, next) {
   //     .catch(err => {
   //         res.status(500).json(err);
   //     });
-  res.status(200).json(user);
+  res.status(200).json(req.user);
 });
+
+function authenticate(req, res, next) {
+  //get user_id from user object
+  const tmp = req.user.user_id.split("|");
+  console.log(tmp);
+  const id = tmp[1];
+
+  //check to see if token exists
+
+  //if token exists, check user_id/auth_id with info from db
+  db.getUserByUserID(id)
+    .then(user => {
+      console.log("found something");
+      console.log(user);
+      if (id === user.auth_id) {
+        console.log("it matcheeees");
+      } else res.status(500).json({ error: "Do not have permission" });
+    })
+    .catch(err => res.status(500).json(err));
+}
 
 module.exports = router;
