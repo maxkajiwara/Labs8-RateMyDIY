@@ -16,7 +16,7 @@ class ProjectList extends Component {
     return (
       <div className="projectPage">
         <div className="sideBar">
-        <AccountSideBar />
+          <AccountSideBar />
         </div>
 
         <div className="myProjectDisplay">
@@ -32,7 +32,7 @@ class ProjectList extends Component {
           <div className="addNew">
             <h2>New Project</h2>
             <Link to="">
-              <img src="http://chittagongit.com//images/plus-button-icon/plus-button-icon-13.jpg" />
+              <img alt="PLACEHOLDER! alt text" src="http://chittagongit.com//images/plus-button-icon/plus-button-icon-13.jpg" />
             </Link>
           </div>
         </div>

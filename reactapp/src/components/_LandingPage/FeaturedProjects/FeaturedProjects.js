@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 //Import components
 import { ProjectTile } from "../../../components";
@@ -8,9 +8,9 @@ import { ProjectTile } from "../../../components";
 //Import Styling
 import "./FeaturedProjects.css";
 class FeaturedProjects extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // } // useless constructor
 
   render() {
     return (

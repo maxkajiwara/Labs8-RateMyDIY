@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 //Import components
 import { MakerTile } from "../../../components";
@@ -8,10 +8,10 @@ import { MakerTile } from "../../../components";
 //Import Styling
 
 class PopularMakers extends Component {
-  constructor() {
-    super();
-  }
-  componentDidMount() {}
+  // constructor() {
+  //   super();
+  // } // useless constructor
+  componentDidMount() { }
   render() {
     return (
       <div className="projects-container">

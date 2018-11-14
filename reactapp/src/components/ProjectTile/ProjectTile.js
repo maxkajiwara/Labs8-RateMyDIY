@@ -1,5 +1,5 @@
 // Import Dependencies
-import React, { Component } from "react";
+import React from "react"; // removed ", { Component }": unused
 import { Link } from "react-router-dom";
 import "./ProjectTile.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";

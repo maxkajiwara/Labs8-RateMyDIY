@@ -2,15 +2,14 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
-import Auth from '../../components/Auth/Auth';
+import Auth from "../../components/Auth/Auth";
 
 // Components
 import {
-  ExampleComponent,
   ReviewList,
   LandingPage,
   ProjectList,
-  CreateEditPage, 
+  CreateEditPage,
   Billing,
   UserSettingsSideBar,
   UserSettingsSummaries,
@@ -20,9 +19,8 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
- SearchBar,
+  //  SearchBar, // not used
   SearchPage,
-
 } from "../../components";
 
 //Styles
@@ -58,7 +56,7 @@ class App extends Component {
           </li>
         </ul>
         {/* <Navbar /> */}
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/" component={SearchPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
         <Route path="/settings/summaries" component={UserSettingsSummaries} />
         <Route exact path="/ReviewList" component={ReviewList} />

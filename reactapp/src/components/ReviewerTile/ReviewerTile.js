@@ -1,6 +1,6 @@
 // Import Dependencies
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react"; // removed ", { Component }": unused
+// import { Link } from "react-router-dom";
 import "./ReviewerTile.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
