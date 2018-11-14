@@ -1,16 +1,15 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom"; // removed Link from import (unused)
 import styled from "styled-components";
-import Auth from '../../components/Auth/Auth';
+import Auth from "../../components/Auth/Auth";
 
 // Components
 import {
-  ExampleComponent,
   ReviewList,
   LandingPage,
   ProjectList,
-  CreateEditPage, 
+  CreateEditPage,
   Billing,
   UserSettingsSideBar,
   UserSettingsSummaries,
@@ -20,27 +19,25 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
- SearchBar,
+  //  SearchBar, // not used
   SearchPage,
-
 } from "../../components";
 
 //Styles
 const AppContainer = styled.div`
   display: flex;
   max-width: 1280px;
-  width: 880px;
+  min-width: 600px;
   height: 100vh;
-  background: #c7e8f1;
-  margin: 0 auto;
+  background: #EFF;
+  margin: 10px auto;
 `;
-
 class App extends Component {
   render() {
     return (
       <AppContainer>
-        <h1>Navigation</h1>
-        <ul>
+        {/* <h1>Navigation</h1> */}
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -56,7 +53,7 @@ class App extends Component {
           <li>
             <Link to="/signin">Sign Up or Sign In</Link>
           </li>
-        </ul>
+        </ul> */}
         {/* <Navbar /> */}
         <Route exact path="/" component={LandingPage} />
         <Route path="/settings" component={UserSettingsSideBar} />
