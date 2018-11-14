@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route } from "react-router-dom"; // removed Link from import (unused)
 import styled from "styled-components";
 import Auth from "../../components/Auth/Auth";
 
@@ -28,12 +28,11 @@ import {
 const AppContainer = styled.div`
   display: flex;
   max-width: 1280px;
-  width: 880px;
+  min-width: 600px;
   height: 100vh;
-  background: #c7e8f1;
-  margin: 0 auto;
+  background: #EFF;
+  margin: 10px auto;
 `;
-
 class App extends Component {
   render() {
     return (
