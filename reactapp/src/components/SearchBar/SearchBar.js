@@ -13,6 +13,31 @@ import "./SearchBar.css";
 const SearchBar = props => {
   return (
     <div className="search-bar">
+      <select name="Maker" id="maker">
+        {/* Need to poll DB for list of makers */}
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      <select name="Reviewer" id="reviewer">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      <select name="Category" id="category">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      <select name="Stars" id="stars">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
       <input
         onChange={e => props.handleChange(e)}
         placeholder="Find a DIY project"
