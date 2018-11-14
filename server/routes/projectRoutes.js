@@ -6,7 +6,8 @@ const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn(
 
 const db = require('../models/projectModel');
 
-router.get('/api/projects/:project_id', function(req, res, next) {
+// get project by id
+router.get('/:project_id', function(req, res, next) {
 	const { project_id } = req.params;
 
 	db.getProjectByID(project_id)
@@ -22,7 +23,8 @@ router.get('/api/projects/:project_id', function(req, res, next) {
 		});
 });
 
-router.get('/api/projects/:project_id/reviews', function(req, res, next) {
+// get reviews by project id
+router.get('/:project_id/reviews', function(req, res, next) {
 	const { project_id } = req.params;
 
 	db.getReviewsByProjectID(project_id)
@@ -38,13 +40,14 @@ router.get('/api/projects/:project_id/reviews', function(req, res, next) {
 		});
 });
 
-router.post('/api/projects', ensureLoggedIn, function(req, res, next) {
-	const { user_id, project_name, picture, text } = req.body;
+// add project
+router.post('/', ensureLoggedIn, function(req, res, next) {
+	const { user_id, project_name, img_url, text } = req.body;
 
-	if (!project_name || !picture || !text) {
+	if (!project_name || !img_url || !text) {
 		return res.status(422).json({ error: 'Missing parameters.' });
 	} else {
-		const project = { user_id, project_name, picture, text };
+		const project = { user_id, project_name, img_url, text };
 		db.addProject(project)
 			.then(project_id => {
 				res.status(201).json(project_id);
@@ -55,18 +58,15 @@ router.post('/api/projects', ensureLoggedIn, function(req, res, next) {
 	}
 });
 
-router.put('/api/projects/:project_id', ensureLoggedIn, function(
-	req,
-	res,
-	next
-) {
-	const { user_id, project_name, picture, text } = req.body;
+// update project by id
+router.put('/:project_id', ensureLoggedIn, function(req, res, next) {
+	const { user_id, project_name, img_url, text } = req.body;
 	const { project_id } = req.params;
 
-	if (!project_name || !picture || !text) {
+	if (!project_name || !img_url || !text) {
 		return res.status(422).json({ error: 'Missing parameters.' });
 	} else {
-		const changes = { project_name, picture, text };
+		const changes = { project_name, img_url, text };
 		db.editProject(user_id, project_id, changes)
 			.then(count => {
 				if (count) {
@@ -81,11 +81,8 @@ router.put('/api/projects/:project_id', ensureLoggedIn, function(
 	}
 });
 
-router.delete('/api/projects/:project_id', ensureLoggedIn, function(
-	req,
-	res,
-	next
-) {
+// delete project by id
+router.delete('/:project_id', ensureLoggedIn, function(req, res, next) {
 	const { user_id } = req.body;
 	const { project_id } = req.params;
 
