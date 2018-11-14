@@ -8,8 +8,19 @@ import { ReviewerTile } from "../../../components";
 
 // styled-components
 
+const PopularReviewersWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+`;
 
-const PopularReviewersHeader = styled.h1`
+const PopularReviewersListTiles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+`;
+
+const PopularMakersTitle = styled.h1`
   font-size: 18px;
   width: 100%;
   margin: 10px 25px; 
@@ -22,14 +33,14 @@ class Reviewers extends Component {
   componentDidMount() { }
   render() {
     return (
-      <div className="projects-container">
-        <PopularReviewersHeader>Popular Reviewers</PopularReviewersHeader>
-        <div className="projects">
+      <PopularReviewersWrapper>
+        <PopularMakersTitle>Popular Reviewers</PopularMakersTitle>
+        <PopularReviewersListTiles>
           {this.props.reviewers.map(reviewer => (
             <ReviewerTile reviewer={reviewer} />
           ))}
-        </div>
-      </div>
+        </PopularReviewersListTiles>
+      </PopularReviewersWrapper>
     );
   }
 }
