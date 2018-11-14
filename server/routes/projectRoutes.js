@@ -46,8 +46,8 @@ router.post('/api/projects', ensureLoggedIn, function(req, res, next) {
 	} else {
 		const project = { user_id, project_name, picture, text };
 		db.addProject(project)
-			.then(res => {
-				res.status(201).json(res);
+			.then(project_id => {
+				res.status(201).json(project_id);
 			})
 			.catch(err => {
 				res.status(500).json(err);
@@ -68,9 +68,9 @@ router.put('/api/projects/:project_id', ensureLoggedIn, function(
 	} else {
 		const changes = { project_name, picture, text };
 		db.editProject(user_id, project_id, changes)
-			.then(project_id => {
-				if (project_id) {
-					res.status(200).json(res);
+			.then(count => {
+				if (count) {
+					res.status(200).json(count);
 				} else {
 					res.status(404).json({ error: 'Project not found.' });
 				}
@@ -92,7 +92,7 @@ router.delete('/api/projects/:project_id', ensureLoggedIn, function(
 	db.removeProject(user_id, project_id)
 		.then(count => {
 			if (count) {
-				res.status(200).json(res);
+				res.status(200).json(count);
 			} else {
 				res.status(404).json({ error: 'Project not found.' });
 			}
