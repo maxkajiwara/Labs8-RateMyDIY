@@ -1,12 +1,23 @@
 // Import Dependencies
-import React, { Component } from "react";
+import React from "react"; // removed ", { Component }": unused
 import { Link } from "react-router-dom";
-import "./ProjectTile.css";
+import styled from 'styled-components';
+const ProjectTileWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+`;
 
+const ProjectImage = styled.div`
+  width: 200px;
+  height: 200px;
+  background: #FEE;
+`;
 const ProjectTile = props => {
   return (
-    <div className="project">
-      <img className="project-image" src="${https://someAWS.S3.URL}" />
+    <ProjectTileWrapper>
+      {/* removed src="${https://someAWS.S3.URL}" */}
+      <ProjectImage alt="PLACEHOLDER! alt text" className="project-image" src="" ></ProjectImage>
       <div className="star-rating">
         <span className="fa fa-star checked" />
         <span className="fa fa-star checked" />
@@ -16,7 +27,7 @@ const ProjectTile = props => {
       </div>
       <p className="project-name">{props.project.name}</p>
       <Link to="/:author">{props.project.author}</Link>
-    </div>
+    </ProjectTileWrapper>
   );
 };
 
