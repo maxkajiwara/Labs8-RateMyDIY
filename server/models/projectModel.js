@@ -35,7 +35,8 @@ function getReviewsByProjectID(project_id) {
 function addProject(project) {
 	return db('projects')
 		.returning('project_id')
-		.insert(project);
+		.insert(project)
+		.then(([id]) => id);
 }
 
 function editProject(user_id, project_id, changes) {
