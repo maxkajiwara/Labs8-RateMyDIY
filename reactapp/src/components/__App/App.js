@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import styled from "styled-components";
 import Auth from "../../components/Auth/Auth";
 
@@ -19,6 +19,7 @@ import {
   UserSettingSkills,
   UserSettingResumes,
   UserSettingSettings,
+  DropDown,
   //  SearchBar, // not used
   SearchPage,
 } from "../../components";
