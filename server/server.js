@@ -4,6 +4,7 @@ const express = require("express");
 const server = express();
 
 const db = require("./config/dbConfig");
+console.log(db);
 
 // MIDDLEWARE
 const configureMiddleware = require("./config/middleware");
