@@ -31,23 +31,29 @@ router.get('/signout', (req, res) => {
 
 router.get('/test', ensureLoggedIn, function (req, res, next) {
     // console.log(req.user);
-    // let sub = req.user._json.sub.split('|');
-    // let auth_id = sub[1];
-    // let username = req.user._json.nickname;
-    // let user = {
-    //     auth_id,
-    //     username
-    // }
-    // db
-    //     .addUser(user)
-    //     .then(ids => {
-    //         console.log(ids);
-    //         res.status(201).json(ids[0]);
-    //     })
-    //     .catch(err => {
-    //         res.status(500).json(err);
-    //     });
-    res.status(200).json(req.user);
+    // console.log(req.user['emails']);
+    // console.log(req.user._json['https://ratemydiy.herokuapp.com/roles']);
+    let role = req.user._json['https://ratemydiy.herokuapp.com/roles'];
+    let sub = req.user._json.sub.split('|');
+    let auth_id = sub[1];
+    let username = req.user._json.nickname;
+    let user = {
+        auth_id,
+        username
+    }
+    if (role[0] === 'new') {
+      db
+        .addUser(user)
+        .then(res => {
+            console.log(res);
+            res.status(201).json(res);
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+    } else {
+      res.status(200).json(user);
+    }
 });
 
 module.exports = router;

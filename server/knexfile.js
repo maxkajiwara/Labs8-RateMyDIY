@@ -6,11 +6,21 @@ const dbName = process.env.DB_NAME;
 module.exports = {
 	development: {
 		client: 'mssql',
+		// connection: {
+		// 	host: 'localhost\\SQLEXPRESS',
+		// 	user: 'sa',
+		// 	password: 'admin',
+		// 	database: 'diydb',
+		// 	options: {
+		// 		port: 1433,
+		// 		encrypt: true
+		// 	}
+		// },
 		connection: {
-			host: 'localhost\\SQLEXPRESS',
-			user: 'sa',
-			password: 'admin',
-			database: 'diydb',
+			host: 'localhost',
+			user: 'SA',
+			password: 'SqlServer2017',
+			database: 'TutorialDB',
 			options: {
 				port: 1433,
 				encrypt: true
