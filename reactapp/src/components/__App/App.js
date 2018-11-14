@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <h1>Navigation</h1>
+        {/* <h1>Navigation</h1> */}
         {/* <ul>
           <li>
             <Link to="/">Home</Link>
