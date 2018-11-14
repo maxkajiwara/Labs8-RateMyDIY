@@ -1,6 +1,6 @@
-const dotenv = require('dotenv');
-const passport = require('passport');
-const Auth0Strategy = require('passport-auth0');
+const dotenv = require("dotenv");
+const passport = require("passport");
+const Auth0Strategy = require("passport-auth0");
 
 dotenv.load();
 
@@ -20,17 +20,18 @@ let strategy = new Auth0Strategy(
 		// console.log(profile);
 		return done(null, profile);
 	}
+
 );
 
 passport.use(strategy);
 
 // You can use this section to keep a smaller payload
 passport.serializeUser(function(user, done) {
-	done(null, user);
+  done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
-	done(null, user);
+  done(null, user);
 });
 
 module.exports = strategy;
