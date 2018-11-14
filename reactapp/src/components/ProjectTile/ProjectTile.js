@@ -64,7 +64,7 @@ class ProjectTile extends React.Component {
           </ModalBody>
           <ModalBody>{this.props.project.author}</ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle} >
+            <Button color="primary" onClick={this.toggle}>
               Do Something
             </Button>{" "}
           </ModalFooter>

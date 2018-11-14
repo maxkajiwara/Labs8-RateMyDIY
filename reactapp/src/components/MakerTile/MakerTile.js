@@ -38,7 +38,7 @@ class MakerTile extends React.Component {
           <span className="fa fa-star checked" />
         </div>
         <p className="project-name">{this.props.maker.name}</p>
-        
+
         {/* React strap Modal */}
         <Button color="danger" onClick={this.toggle}>
           {" "}
@@ -52,7 +52,7 @@ class MakerTile extends React.Component {
           dialogClassName="my-modal"
         >
           <ModalHeader toggle={this.toggle}>
-          {this.props.maker.name}
+            {this.props.maker.name}
           </ModalHeader>
           <ModalBody>
             <span className="fa fa-star checked" />
@@ -62,7 +62,7 @@ class MakerTile extends React.Component {
             <span className="fa fa-star checked" />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle} >
+            <Button color="primary" onClick={this.toggle}>
               Do Something
             </Button>{" "}
           </ModalFooter>
