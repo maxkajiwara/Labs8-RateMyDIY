@@ -1,11 +1,29 @@
 // Import Dependencies
 import React, { Component } from "react";
+import styled from 'styled-components';
 // import { Link } from "react-router-dom";
 
 //Import components
 import { MakerTile } from "../../../components";
 
-//Import Styling
+// styled components
+
+const PopularMakersWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+`;
+const PopularMakerListTiles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+`;
+
+const PopularMakersTitle = styled.h1`
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 25px; 
+`;
 
 class PopularMakers extends Component {
   // constructor() {
@@ -14,14 +32,14 @@ class PopularMakers extends Component {
   componentDidMount() { }
   render() {
     return (
-      <div className="projects-container">
-        <h1>Popular Makers</h1>
-        <div className="projects">
+      <PopularMakersWrapper>
+        <PopularMakerListTiles>
+          <PopularMakersTitle>Popular Makers</PopularMakersTitle>
           {this.props.popularMakers.map(maker => (
             <MakerTile maker={maker} />
           ))}
-        </div>
-      </div>
+        </PopularMakerListTiles>
+      </PopularMakersWrapper>
     );
   }
 }
