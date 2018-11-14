@@ -7,22 +7,20 @@ import { ProjectTile } from "../../../components";
 
 //Import Styling
 const FeaturedProjectsWrapper = styled.div`
-  width: 100%;
-  margin: 20px auto;
-  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+`;
+const FeaturedProjectListTiles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
 `;
 
 const FeaturedProjectTitle = styled.h1`
   font-size: 18px;
   width: 100%;
-  margin: 10px 25px;  
-`;
-
-const ProjectWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin: 10px 25px; 
 `;
 
 class FeaturedProjects extends Component {
@@ -34,11 +32,11 @@ class FeaturedProjects extends Component {
     return (
       <FeaturedProjectsWrapper>
         <FeaturedProjectTitle>Featured Projects</FeaturedProjectTitle>
-        <ProjectWrapper>
+        <FeaturedProjectListTiles>
           {this.props.featuredProjects.map(project => (
             <ProjectTile project={project} />
           ))}
-        </ProjectWrapper>
+        </FeaturedProjectListTiles>
       </FeaturedProjectsWrapper>
     );
   }
