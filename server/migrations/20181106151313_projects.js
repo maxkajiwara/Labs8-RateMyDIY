@@ -2,14 +2,14 @@ exports.up = function(knex, Promise) {
 	return knex.schema.createTable('projects', table => {
 		table.increments('project_id'); //primary key
 		table
-			.integer('user_id') // author's primary key
+			.string('user_id') // author's primary key
 			.unsigned()
 			.notNullable();
 		// .references('users.user_id');
 		table
 			.string('project_name', 48) // project title
 			.notNullable();
-		table.string('picture'); // primary image url
+		table.string('img_url'); // primary image url
 		table.string('text', 1024); // primary text field
 		table
 			.timestamp('last_updated') // time last updated

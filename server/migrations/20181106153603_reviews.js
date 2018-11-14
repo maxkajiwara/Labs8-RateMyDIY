@@ -15,6 +15,7 @@ exports.up = function(knex, Promise) {
 			.integer('rating') // rating submitted by reviewer
 			.notNullable()
 			.unsigned();
+		table.string('img_url');
 		table.string('text', 1024); // review text (not nullable? minimum length?)
 		table
 			.integer('likes') // count of all likes received
