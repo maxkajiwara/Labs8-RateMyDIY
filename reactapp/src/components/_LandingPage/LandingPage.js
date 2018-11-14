@@ -3,21 +3,40 @@ import React, { Component } from "react";
 // import { NavLink, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProjects, getMakers, getReviewers } from "../../actions";
-import "./LandingPage.css";
+import styled from 'styled-components';
 
-//Import component
-const {
+//Import components
+import {
+  DropDown,
   FeaturedProjects,
   PopularMakers,
   PopularReviewers,
   SearchBar
-} = require("../../components");
+} from "../../components";
+
+// styled-components
+const LandingPageWrapper = styled.div`
+  width: 100%;
+`;
+
+const ProjectsWrapper = styled.div`
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid blue;
+`;
+
+const ProjectH1 = styled.h1`
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 25px;
+`;
 
 class LandingPage extends Component {
   constructor() {
     super();
     this.state = { input: "" };
   }
+
   componentDidMount() {
     console.log("component did mount!");
     this.props.getProjects();
@@ -39,14 +58,14 @@ class LandingPage extends Component {
   render() {
     // console.log(SearchBar);
     return (
-      <div className="container">
+      <LandingPageWrapper>
+        <DropDown />
         <SearchBar handleChange={this.handleChange} />
-        <div className="landing-page-container">
-          <FeaturedProjects featuredProjects={this.props.featuredProjects} />
-          <PopularMakers popularMakers={this.props.popularMakers} />
-          <PopularReviewers reviewers={this.props.popularReviewers} />
-        </div>
-      </div>
+
+        <FeaturedProjects featuredProjects={this.props.featuredProjects} />
+        <PopularMakers popularMakers={this.props.popularMakers} />
+        <PopularReviewers reviewers={this.props.popularReviewers} />
+      </LandingPageWrapper>
     );
   }
 }
