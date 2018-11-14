@@ -1,9 +1,9 @@
 // Import Dependencies
 import React, { Component } from "react";
 // import { NavLink, Link, Route } from "react-router-dom";
+import styled from 'styled-components';
 import { connect } from "react-redux";
 import { getProjects, getMakers, getReviewers } from "../../actions";
-import styled from 'styled-components';
 
 //Import components
 import {
@@ -15,20 +15,17 @@ import {
 } from "../../components";
 
 // styled-components
+const LandingPageContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+`;
 const LandingPageWrapper = styled.div`
   width: 100%;
 `;
-
-const ProjectsWrapper = styled.div`
+const DropdownMenu = styled.div`
   width: 100%;
-  margin: 20px auto;
-  border: 1px solid blue;
-`;
-
-const ProjectH1 = styled.h1`
-  font-size: 18px;
-  width: 100%;
-  margin: 10px 25px;
 `;
 
 class LandingPage extends Component {
@@ -59,12 +56,16 @@ class LandingPage extends Component {
     // console.log(SearchBar);
     return (
       <LandingPageWrapper>
-        <DropDown />
-        <SearchBar handleChange={this.handleChange} />
+        <DropdownMenu>
+          <DropDown />
+        </DropdownMenu>
+        <LandingPageContentWrapper>
+          <SearchBar handleChange={this.handleChange} />
 
-        <FeaturedProjects featuredProjects={this.props.featuredProjects} />
-        <PopularMakers popularMakers={this.props.popularMakers} />
-        <PopularReviewers reviewers={this.props.popularReviewers} />
+          <FeaturedProjects featuredProjects={this.props.featuredProjects} />
+          <PopularMakers popularMakers={this.props.popularMakers} />
+          <PopularReviewers reviewers={this.props.popularReviewers} />
+        </LandingPageContentWrapper>
       </LandingPageWrapper>
     );
   }
