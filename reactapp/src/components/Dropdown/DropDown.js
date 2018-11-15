@@ -1,9 +1,12 @@
 // Dependencies
-import React, { Fragment } from "react";
+import React, { Fragment, Link } from "react";
 // import { Route } from "react-router-dom";
 // import { connect } from "react-redux";
-import styled from 'styled-components';
-import axios from 'axios';
+import styled from "styled-components";
+import axios from "axios";
+
+//Constand variables
+const loginURL = "http://localhost:5000/signin";
 
 // styled-components
 const DropDownWrapper = styled.div`
@@ -34,55 +37,62 @@ const WelcomeMessage = styled.p`
 const SignOutLink = styled.a`
   font-size: 14px;
 `;
-const DropDown = props => {
-
-  function getUserInfo() {
-    axios.get('http://localhost:5000/api/users/user', { withCredentials: true })
-    .then(res => {
-      console.log('getUserInfoResponse', res);
-      return res;
-    })
-    .catch(err => {
-      console.log('getUserInfoError', err);
-      return err;
-    });
+class DropDown extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
   }
-  
-  function doesHttpOnlyCookieExist(cookiename) {
+  getUserInfo() {
+    axios
+      .get("http://localhost:5000/api/users/user", { withCredentials: true })
+      .then(res => {
+        console.log("getUserInfoResponse", res);
+        return res;
+      })
+      .catch(err => {
+        console.log("getUserInfoError", err);
+        return err;
+      });
+  }
+
+  doesHttpOnlyCookieExist(cookiename) {
     let date = new Date();
-    date.setTime(date.getTime() + (1000));
+    date.setTime(date.getTime() + 1000);
     let expires = "expires=" + date.toUTCString();
- 
-    document.cookie = cookiename + "=new_value;path=/;" + expires;
-    if (document.cookie.indexOf(cookiename + '=') == -1) {
-        return true;
-     } else {
-        return false;
-     }
-  }
 
-  let cookieExists = doesHttpOnlyCookieExist('connect.sid');
-  console.log(cookieExists);
+    document.cookie = cookiename + "=new_value;path=/;" + expires;
+    if (document.cookie.indexOf(cookiename + "=") == -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // getUserInfo();
 
-  return (
-    <DropDownWrapper>
-      {/* Conditional check to see if user is logged in */}
-      {/* if not logged in, show the login/signup buttons */}
-      {/* if logged in, show component that says "Hello NAME then have a signout button" */}
-      { cookieExists ? ( 
-        <Fragment>
-        <WelcomeMessage>Welcome</WelcomeMessage> <SignOutLink>Signout</SignOutLink>
-        </Fragment>
-      )
-      : (
-        <Fragment>
-        <LogInLink>Log In</LogInLink> <SignUpLink>Signup</SignUpLink>
-        </Fragment>
-      )
-      }
-    </DropDownWrapper>
-  );
+  render() {
+    //let cookieExists = this.doesHttpOnlyCookieExist("connect.sid");
+    let cookieExists = false;
+    console.log("cookie exists :  " + cookieExists);
+
+    return (
+      <DropDownWrapper>
+        {/* Conditional check to see if user is logged in */}
+        {/* if not logged in, show the login/signup buttons */}
+        {/* if logged in, show component that says "Hello NAME then have a signout button" */}
+        {cookieExists ? (
+          <Fragment>
+            <WelcomeMessage>Welcome</WelcomeMessage>{" "}
+            <SignOutLink>Signout</SignOutLink>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <LogInLink href={loginURL}>Login</LogInLink>
+            <SignUpLink>Signup</SignUpLink>
+          </Fragment>
+        )}
+      </DropDownWrapper>
+    );
+  }
 }
-export default DropDown
+export default DropDown;

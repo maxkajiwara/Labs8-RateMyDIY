@@ -20,7 +20,7 @@ import {
   UserSettingResumes,
   UserSettingSettings,
   //  SearchBar, // not used
-  SearchPage,
+  SearchPage
 } from "../../components";
 
 //Styles
@@ -29,7 +29,7 @@ const AppContainer = styled.div`
   max-width: 1280px;
   min-width: 600px;
   height: 100vh;
-  background: #EFF;
+  background: #eff;
   margin: 10px auto;
 `;
 class App extends Component {
