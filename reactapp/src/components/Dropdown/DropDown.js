@@ -2,7 +2,7 @@
 import React from "react";
 // import { Route } from "react-router-dom";
 // import { connect } from "react-redux";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // styled-components
 const DropDownWrapper = styled.div`
@@ -25,14 +25,16 @@ const SignUpLink = styled.a`
   font-size: 14px;
 `;
 const DropDown = props => {
-
   return (
     <DropDownWrapper>
       {/* Conditional check to see if user is logged in */}
       {/* if not logged in, show the login/signup buttons */}
-      <LogInLink>Log In</LogInLink> <SignUpLink>Signup</SignUpLink>
+      <LogInLink>
+        <a href="/signin">Log In</a>
+      </LogInLink>{" "}
+      <SignUpLink>Signup</SignUpLink>
       {/* if logged in, show component that says "Hello NAME then have a signout button" */}
     </DropDownWrapper>
   );
-}
-export default DropDown
+};
+export default DropDown;
