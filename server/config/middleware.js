@@ -15,10 +15,11 @@ var store = new KnexSessionStore({
   createtable: false
 });
 
+// httpOnly configuration set to true for production
 const sessionConfig = {
   store: store,
   secret: [process.env.SESSION_SECRET || "TKd8^S$W-HPS3NtF"],
-  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 }, // 1 week
+  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true }, // 1 week
   resave: false,
   saveUninitialized: false
 };
