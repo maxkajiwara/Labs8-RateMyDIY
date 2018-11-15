@@ -4,8 +4,10 @@ import React, { Fragment, Link } from "react";
 // import { connect } from "react-redux";
 import styled from "styled-components";
 import axios from "axios";
+import { Cookies } from "react-cookie";
+import cookie from "react-cookies";
 
-//Constand variables
+//Constant variables
 const loginURL = "http://localhost:5000/signin";
 
 // styled-components
@@ -42,31 +44,38 @@ class DropDown extends React.Component {
     super();
     this.state = {};
   }
-  getUserInfo() {
-    axios
-      .get("http://localhost:5000/api/users/user", { withCredentials: true })
-      .then(res => {
-        console.log("getUserInfoResponse", res);
-        return res;
-      })
-      .catch(err => {
-        console.log("getUserInfoError", err);
-        return err;
-      });
-  }
 
-  doesHttpOnlyCookieExist(cookiename) {
-    let date = new Date();
-    date.setTime(date.getTime() + 1000);
-    let expires = "expires=" + date.toUTCString();
-
-    document.cookie = cookiename + "=new_value;path=/;" + expires;
-    if (document.cookie.indexOf(cookiename + "=") == -1) {
-      return true;
-    } else {
-      return false;
-    }
+  componentDidMount() {
+    const c = cookie.load("connect.sid");
+    console.log(c);
+    // console.log(Cookies.get("connect.sid"));
+    //const cookies = browser.cookies;
   }
+  // getUserInfo() {
+  //   axios
+  //     .get("http://localhost:5000/api/users/user", { withCredentials: true })
+  //     .then(res => {
+  //       console.log("getUserInfoResponse", res);
+  //       return res;
+  //     })
+  //     .catch(err => {
+  //       console.log("getUserInfoError", err);
+  //       return err;
+  //     });
+  // }
+
+  // doesHttpOnlyCookieExist(cookiename) {
+  //   let date = new Date();
+  //   date.setTime(date.getTime() + 1000);
+  //   let expires = "expires=" + date.toUTCString();
+
+  //   document.cookie = cookiename + "=new_value;path=/;" + expires;
+  //   if (document.cookie.indexOf(cookiename + "=") == -1) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   // getUserInfo();
 
