@@ -5,6 +5,7 @@ const ensureLoggedIn = require("connect-ensure-login").ensureLoggedIn(
   "/signin"
 );
 const usersDB = require("../models/usersModel");
+const authDB = require("../models/authModel");
 
 const authenticate = require("../config/authMiddleware");
 
@@ -56,6 +57,20 @@ router.get("/callback", function(req, res, next) {
       }
     });
   })(req, res, next);
+});
+
+router.get("/loggedIn", ensureLoggedIn, (req, res) => {
+  console.log(req.user);
+  const auth_id = req.user._json.sub.split("|")[1];
+
+  authDB
+    .loggedIn(auth_id)
+    .then(res => {
+      res.status(200).json(res);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
 
 router.get("/signout", (req, res) => {
