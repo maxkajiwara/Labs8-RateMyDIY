@@ -33,31 +33,45 @@ router.get("/callback", function(req, res, next) {
       }
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
-      // console.log('callback', req.user);
-      let role = req.user._json["https://ratemydiy.herokuapp.com/roles"];
-      console.log(role[0]);
-      let sub = req.user._json.sub.split("|");
-      let auth_id = sub[1];
-      let username = req.user._json.nickname;
-      let user = {
-        auth_id,
-        username
-      };
-      if (role[0] === "new") {
-        usersDB
-          .addUser(user)
-          .then(res => {
-            res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
-          })
-          .catch(err => {
-            res.status(500).json(err);
-          });
-      } else {
-        res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
-      }
+      console.log("callback", req.user);
+      // let role =
+      //   req.user._json[
+      //     `${process.env.API_URL ||
+      //       `http://localhost:${process.env.PORT}`}/roles`
+      //   ];
+      // console.log(role[0]);
+      // let sub = req.user._json.sub.split("|");
+      // let auth_id = sub[1];
+      // let username = req.user._json.nickname;
+      // let user = {
+      //   auth_id,
+      //   username
+      // };
+      // if (role[0] === "new") {
+      //   usersDB
+      //     .addUser(user)
+      //     .then(res => {
+      //       res.redirect(
+      //         returnTo ||
+      //           `${process.env.API_URL ||
+      //             `http://localhost:${process.env.PORT}`}`
+      //       );
+      //     })
+      //     .catch(err => {
+      //       res.status(500).json(err);
+      //     });
+      // } else {
+      //   res.redirect(
+      //     returnTo ||
+      //       `${process.env.API_URL ||
+      //         `http://localhost:${process.env.PORT}`}/roles`
+      //   );
+      // }
     });
   })(req, res, next);
 });
+
+`${process.env.API_URL || `http://localhost:${process.env.PORT}`}/roles`;
 
 router.get("/loggedIn", ensureLoggedIn, (req, res) => {
   console.log(req.user);
