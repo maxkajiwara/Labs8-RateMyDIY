@@ -50,6 +50,14 @@ class DropDown extends React.Component {
     console.log(c);
     // console.log(Cookies.get("connect.sid"));
     //const cookies = browser.cookies;
+
+    axios
+      .get("http://localhost:5000/api/users/user", { withCredentials: true })
+      .then(res => {
+        console.log("getUserInfoResponse", res);
+        return res;
+      })
+      .catch(err => console.log(err));
   }
   // getUserInfo() {
   //   axios

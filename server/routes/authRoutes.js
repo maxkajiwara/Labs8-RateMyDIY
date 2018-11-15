@@ -6,7 +6,7 @@ const ensureLoggedIn = require("connect-ensure-login").ensureLoggedIn(
 );
 const usersDB = require("../models/usersModel");
 
-const authenticate = require('../config/authMiddleware');
+const authenticate = require("../config/authMiddleware");
 
 router.get(
   "/signin",
@@ -33,7 +33,7 @@ router.get("/callback", function(req, res, next) {
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
       // console.log('callback', req.user);
-      let role = req.user._json['https://ratemydiy.herokuapp.com/roles'];
+      let role = req.user._json["https://ratemydiy.herokuapp.com/roles"];
       console.log(role[0]);
       let sub = req.user._json.sub.split("|");
       let auth_id = sub[1];
@@ -42,14 +42,14 @@ router.get("/callback", function(req, res, next) {
         auth_id,
         username
       };
-      if (role[0] === 'new') {
+      if (role[0] === "new") {
         usersDB
           .addUser(user)
           .then(res => {
-              res.redirect(returnTo || "http://localhost:3000");
+            res.redirect(returnTo || "http://localhost:3000");
           })
           .catch(err => {
-              res.status(500).json(err);
+            res.status(500).json(err);
           });
       } else {
         res.redirect(returnTo || "http://localhost:3000");
@@ -58,16 +58,15 @@ router.get("/callback", function(req, res, next) {
   })(req, res, next);
 });
 
-
-router.get('/signout', (req, res) => {
-	req.logout();
-	res.redirect('/');
-  });
+router.get("/signout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
 router.post("/test", ensureLoggedIn, authenticate, function(req, res, next) {
   //console.log(req.user);
   //console.log(req.user.app_metadata);
-  res.status(200).json({ message: 'it works' });
+  res.status(200).json({ message: "it works" });
 });
 
 module.exports = router;
