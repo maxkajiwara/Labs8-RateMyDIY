@@ -46,13 +46,13 @@ router.get("/callback", function(req, res, next) {
         usersDB
           .addUser(user)
           .then(res => {
-              res.redirect(returnTo || "https://5bedd455b31274289819863b--ratemydiy-test.netlify.com/");
+              res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
           })
           .catch(err => {
               res.status(500).json(err);
           });
       } else {
-        res.redirect(returnTo || "https://5bedd455b31274289819863b--ratemydiy-test.netlify.com/");
+        res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
       }
     });
   })(req, res, next);
