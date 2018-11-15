@@ -8,8 +8,8 @@ const authenticate = require('../config/authMiddleware');
 
 const db = require('../models/projectModel');
 
-// file-upload1.js config for aws-sdk and multer
-const upload = require('../file-upload1');
+// setup-aws-s3.js config for aws-sdk and multer
+const upload = require('../setup-aws-s3');
 
 const singleUpload = upload.single('image')
 
