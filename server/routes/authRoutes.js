@@ -46,13 +46,13 @@ router.get("/callback", function(req, res, next) {
         usersDB
           .addUser(user)
           .then(res => {
-            res.redirect(returnTo || "http://localhost:3000");
+            res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
           })
           .catch(err => {
             res.status(500).json(err);
           });
       } else {
-        res.redirect(returnTo || "http://localhost:3000");
+        res.redirect(returnTo || "https://ratemydiy-test.netlify.com/");
       }
     });
   })(req, res, next);

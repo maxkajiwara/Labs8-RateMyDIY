@@ -9,7 +9,7 @@ const usersDB = require("../models/usersModel");
 // const authenticate = require('../config/authMiddleware');
 
 router.get("/user", function(req, res, next) {
-  res.status(200).json(req.user);
+  res.status(200).json(req.cookies);
 });
 
 module.exports = router;
