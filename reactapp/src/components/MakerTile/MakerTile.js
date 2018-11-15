@@ -2,7 +2,7 @@
 import React from "react"; // removed ", { Component }": unused
 // import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import styled from 'styled-components';
+import styled from "styled-components";
 // import "./MakerTile.css";
 const MakerTileWrapper = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const MakerTileWrapper = styled.div`
 const ProjectImage = styled.div`
   width: 200px;
   height: 200px;
-  background: #FEE;
+  background: #fee;
 `;
 class MakerTile extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class MakerTile extends React.Component {
     return (
       <MakerTileWrapper>
         {/* removed src="${https://someAWS.S3.URL}" */}
-        <ProjectImage alt="PLACEHOLDER! alt text" src=""></ProjectImage>
+        <ProjectImage alt="PLACEHOLDER! alt text" src="" />
         <div className="star-rating">
           <span className="fa fa-star checked" />
           <span className="fa fa-star checked" />
@@ -48,7 +48,7 @@ class MakerTile extends React.Component {
           <span className="fa fa-star checked" />
           <span className="fa fa-star checked" />
         </div>
-        <p className="project-name">{props.maker.name}</p>
+        <p className="project-name">{this.props.maker.name}</p>
         {/* React strap Modal */}
         <Button color="danger" onClick={this.toggle}>
           {" "}
@@ -81,6 +81,6 @@ class MakerTile extends React.Component {
       </MakerTileWrapper>
     );
   }
-};
+}
 
 export default MakerTile;

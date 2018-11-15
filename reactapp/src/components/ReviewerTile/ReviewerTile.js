@@ -3,7 +3,7 @@ import React from "react"; // removed ", { Component }": unused
 // import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 const ReviewerTileWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const ReviewerTileWrapper = styled.div`
 const ReviewerImage = styled.div`
   width: 200px;
   height: 200px;
-  background: #FEE;
+  background: #fee;
 `;
 
 class ReviewerTile extends React.Component {
@@ -42,8 +42,12 @@ class ReviewerTile extends React.Component {
     return (
       <ReviewerTileWrapper>
         {/* removed src="${https://someAWS.S3.URL}" */}
-        <ReviewerImage alt="PLACEHOLDER! alt text" className="project-image" src="" ></ReviewerImage>
-        <p className="project-name">{props.reviewer.name}</p>
+        <ReviewerImage
+          alt="PLACEHOLDER! alt text"
+          className="project-image"
+          src=""
+        />
+        <p className="project-name">{this.props.reviewer.name}</p>
         {/* React strap Modal */}
         <Button color="danger" onClick={this.toggle}>
           {" "}
@@ -68,7 +72,7 @@ class ReviewerTile extends React.Component {
         {/* React strap Modal */}
       </ReviewerTileWrapper>
     );
-  };
-};
+  }
+}
 
 export default ReviewerTile;

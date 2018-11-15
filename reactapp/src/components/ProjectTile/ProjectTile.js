@@ -1,7 +1,7 @@
 // Import Dependencies
 import React from "react"; // removed ", { Component }": unused
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 const ProjectTileWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const ProjectTileWrapper = styled.div`
 const ProjectImage = styled.div`
   width: 200px;
   height: 200px;
-  background: #FEE;
+  background: #fee;
 `;
 class ProjectTile extends React.Component {
   constructor(props) {
@@ -40,7 +40,11 @@ class ProjectTile extends React.Component {
     return (
       <ProjectTileWrapper>
         {/* removed src="${https://someAWS.S3.URL}" */}
-        <ProjectImage alt="PLACEHOLDER! alt text" className="project-image" src="" ></ProjectImage>
+        <ProjectImage
+          alt="PLACEHOLDER! alt text"
+          className="project-image"
+          src=""
+        />
         <div className="star-rating">
           <span className="fa fa-star checked" />
           <span className="fa fa-star checked" />
@@ -48,8 +52,8 @@ class ProjectTile extends React.Component {
           <span className="fa fa-star checked" />
           <span className="fa fa-star checked" />
         </div>
-        <p className="project-name">{props.project.name}</p>
-        <Link to="/:author">{props.project.author}</Link>
+        <p className="project-name">{this.props.project.name}</p>
+        <Link to="/:author">{this.props.project.author}</Link>
         {/* React strap Modal */}
         <Button color="danger" onClick={this.toggle}>
           {" "}
@@ -82,7 +86,7 @@ class ProjectTile extends React.Component {
         {/* React strap Modal */}
       </ProjectTileWrapper>
     );
-  };
-};
+  }
+}
 
 export default ProjectTile;
