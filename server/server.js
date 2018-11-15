@@ -27,9 +27,11 @@ server.get('/hello', (req, res) => {
 
 const userRoutes = require('./routes/userRoutes');
 const projectRoutes = require('./routes/projectRoutes');
+const postRoutes = require('./routes/postRoutes');
 
-server.use('/', userRoutes);
-server.use('/', projectRoutes);
+server.use('/api/users', userRoutes);
+server.use('/api/projects', projectRoutes);
+server.use('/api/posts', postRoutes);
 
 // server.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
