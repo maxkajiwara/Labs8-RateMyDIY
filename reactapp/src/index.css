@@ -68,4 +68,9 @@ body {
 
 .modal-open{
 	padding-left: 17px;
+	
+}
+
+.modal-dialog{
+top: 40%;
 }
