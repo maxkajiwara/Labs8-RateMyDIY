@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
 			.string('username', 16) // username chosen at registration
 			.notNullable()
 			.unique();
+		table.string('img_url');
 		table.decimal('user_rating'); // average rating among all projects
 		table.integer('rating_sum').unsigned(); // sum of all ratings among projects
 		table.integer('rating_count').unsigned(); // count of all ratings among projects

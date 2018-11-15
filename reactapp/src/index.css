@@ -65,3 +65,12 @@ html {
 body {
 	font-size: 1.4rem;
 }
+
+.modal-open{
+	padding-left: 17px;
+	
+}
+
+.modal-dialog{
+top: 35%;
+}

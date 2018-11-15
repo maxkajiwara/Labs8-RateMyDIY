@@ -1,9 +1,10 @@
-const server = require('./server');
+const server = require("./server");
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
-	console.log(`\n=== Listening on port: ${port} ===\n`);
+  console.log(`\n=== Listening on port: ${port} ===\n`);
 });
+
 // const express = require('express');
 // const cors = require('cors');
 
@@ -80,7 +81,6 @@ server.listen(port, () => {
 //     }
 //   ]
 
-
 //   let popularMakers = [
 //     {
 //       id: 1,
@@ -126,7 +126,6 @@ server.listen(port, () => {
 //   server.get('/api/popularMakers', (req, res) => {
 // 	res.json(popularMakers);
 //   });
-  
 
 // server.get('/api/myProjects', (req, res) => {
 //   res.json(myProjects);
@@ -136,3 +135,4 @@ server.listen(port, () => {
 // server.listen(port, () => {
 // 	console.log(`\n=== Listening on port: ${port} ===\n`);
 // });
+

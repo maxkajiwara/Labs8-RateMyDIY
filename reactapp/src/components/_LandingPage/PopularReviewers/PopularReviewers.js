@@ -1,11 +1,30 @@
 // Import Dependencies
 import React, { Component } from "react";
+import styled from 'styled-components';
 // import { Link } from "react-router-dom";
 
 //Import components
 import { ReviewerTile } from "../../../components";
 
-//Import Styling
+// styled-components
+
+const PopularReviewersWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+`;
+
+const PopularReviewersListTiles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+`;
+
+const PopularMakersTitle = styled.h1`
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 25px; 
+`;
 
 class Reviewers extends Component {
   // constructor() {
@@ -14,14 +33,14 @@ class Reviewers extends Component {
   componentDidMount() { }
   render() {
     return (
-      <div className="projects-container">
-        <h1>Popular Reviewers</h1>
-        <div className="projects">
+      <PopularReviewersWrapper>
+        <PopularMakersTitle>Popular Reviewers</PopularMakersTitle>
+        <PopularReviewersListTiles>
           {this.props.reviewers.map(reviewer => (
             <ReviewerTile reviewer={reviewer} />
           ))}
-        </div>
-      </div>
+        </PopularReviewersListTiles>
+      </PopularReviewersWrapper>
     );
   }
 }

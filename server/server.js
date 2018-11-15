@@ -1,12 +1,12 @@
 // DEPENDENCIES
-const express = require("express");
+const express = require('express');
 
 const server = express();
 
-const db = require("./config/dbConfig");
+const db = require('./config/dbConfig');
 
 // MIDDLEWARE
-const configureMiddleware = require("./config/middleware");
+const configureMiddleware = require('./config/middleware');
 
 configureMiddleware(server);
 
@@ -14,22 +14,24 @@ configureMiddleware(server);
 // const exampleRoutes = require('./routes/exampleRoutes');
 
 // SANITY CHECK
-server.get("/", (req, res) => {
-  res.send(
-    `Believe it or not, this is the first endpoint added to the great RateMyDIY project.`
-  );
+server.get('/', (req, res) => {
+	res.send(
+		`Believe it or not, this is the first endpoint added to the great RateMyDIY project.`
+	);
 });
 
-server.get("/hello", (req, res) => {
-  console.log("hey");
-  res.send("hi");
+server.get('/hello', (req, res) => {
+	console.log('hey');
+	res.send('hi');
 });
 
-const userRoutes = require("./routes/userRoutes");
-const projectsRoutes = require("./routes/projectsRoutes");
+const userRoutes = require('./routes/userRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+const postRoutes = require('./routes/postRoutes');
 
-server.use("/", userRoutes);
-server.use("/", projectsRoutes);
+server.use('/api/users', userRoutes);
+server.use('/api/projects', projectRoutes);
+server.use('/api/posts', postRoutes);
 
 // server.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -37,34 +39,40 @@ server.use("/", projectsRoutes);
 //   next();
 // });
 
-// Error handlers
-// Catch 404 and forward to error handler
-server.use(function(req, res, next) {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
 
-// Development error handler
-// Will print stacktrace
-if (server.get("env") === "development") {
-  server.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.json({
-      message: err.message,
-      error: err
-    });
-  });
-}
+// // Error handlers
+// // Catch 404 and forward to error handler
+// server.use(function(req, res, next) {
+// 	const err = new Error('Not Found');
+// 	err.status = 404;
+// 	next(err);
 
-// Production error handler
-// No stacktraces leaked to user
-server.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({
-    message: err.message,
-    error: {}
-  });
-});
+// });
+
+// // Development error handler
+// // Will print stacktrace
+
+// if (server.get('env') === 'development') {
+// 	server.use(function(err, req, res, next) {
+// 		res.status(err.status || 500);
+// 		res.json({
+// 			message: err.message,
+// 			error: err
+// 		});
+// 	});
+
+// }
+
+// // Production error handler
+// // No stacktraces leaked to user
+// server.use(function(err, req, res, next) {
+
+// 	res.status(err.status || 500);
+// 	res.json({
+// 		message: err.message,
+// 		error: {}
+// 	});
+
+// });
 
 module.exports = server;
