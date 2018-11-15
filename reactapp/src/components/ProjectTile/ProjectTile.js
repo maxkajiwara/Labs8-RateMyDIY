@@ -53,7 +53,9 @@ class ProjectTile extends React.Component {
           <span className="fa fa-star checked" />
         </div>
         <p className="project-name">{this.props.project.name}</p>
-        <Link to="/:author">{this.props.project.author}</Link>
+        <Link to={`/${this.props.project.author}`}>
+          {this.props.project.author}
+        </Link>
         {/* React strap Modal */}
         <Button color="danger" onClick={this.toggle}>
           {" "}
