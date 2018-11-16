@@ -62,7 +62,7 @@ class ProjectTile extends React.Component {
         <ImageHolder>
           <ProjectImage
             alt="PLACEHOLDER! alt text"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGzDMUBhpy4KeOU-EAumo-fG8gCrYW7_v1y0LvcR-26z8kruWk" />
+            src={this.props.project.photo_url} />
         </ImageHolder>
         <Details>
           <div className="star-rating">

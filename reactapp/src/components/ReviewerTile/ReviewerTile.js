@@ -62,7 +62,7 @@ class ReviewerTile extends React.Component {
         <ImageHolder>
           <ReviewerImage
             alt="PLACEHOLDER! alt text"
-            src="https://ssl.c.photoshelter.com/img-get2/I0000uXfqb7iQKLs/fit=1000x750/Tim-Allen-actor-comedian-from-the-TV-series-Home-Improvement-Last-Man-Standing-films-The-Santa-Clause-Toy-Story-Jungle-2-Jungle-Galaxy-Quest-in-a-celebrity-portrait-0001.jpg" />
+            src={this.props.reviewer.photo_url} />
         </ImageHolder>
         <Details>
           <p className="project-name">{this.props.reviewer.name}</p>
